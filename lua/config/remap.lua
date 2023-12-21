@@ -1,7 +1,12 @@
--- ctrl c + ctrl v
-vim.api.nvim_set_keymap('i', '<C-v>', '<C-r>+', { noremap = true })
+-- ctrl + c = copy
 vim.api.nvim_set_keymap('i', '<C-c>', '"+y', { noremap = true })
 vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true })
+-- ctrl + v = paste
+vim.api.nvim_set_keymap('i', '<C-v>', '<C-r>+', { noremap = true })
+vim.api.nvim_set_keymap('v', '<C-v>', '"+p', { noremap = true })
+-- ctrl + x = cut
+vim.api.nvim_set_keymap('i', '<C-x>', '<Esc>"+diw', { noremap = true })
+vim.api.nvim_set_keymap('v', '<C-x>', '"+d', { noremap = true })
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Explore<CR>")
@@ -57,7 +62,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", function()
+end)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
