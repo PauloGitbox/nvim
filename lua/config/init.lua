@@ -1,8 +1,3 @@
-vim.cmd('set number')
-vim.cmd('set relativenumber')
 vim.cmd('colorscheme catppuccin')
-vim.api.nvim_set_keymap('i', '<C-v>', '<C-r>+', { noremap = true })
-vim.api.nvim_set_keymap('i', '<C-c>', '"+y', { noremap = true })
-vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true })
 require("config.remap")
 require("config.set")
